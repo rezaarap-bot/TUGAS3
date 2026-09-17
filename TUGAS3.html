@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Sistem Kasir Minimarket</h2>
+    <script>
+        // Input
+        let kasir = prompt("Masukkan Nama Kasir:");
+        let pembeli = prompt("Masukkan Nama Pembeli:");
+        let totalBelanja = Number(prompt("Masukkan Total Belanja (Rp):"));
+
+        // Percabangan Diskon
+        let persenDiskon = 0;
+        if (totalBelanja >= 150000) {
+            persenDiskon = 15;
+        } else if (totalBelanja >= 75000) {
+            persenDiskon = 10;
+        }
+
+        let nominalDiskon = (persenDiskon / 100) * totalBelanja;
+        let totalBayar = totalBelanja - nominalDiskon;
+
+        // Output Struk dengan Perulangan Garis
+        for (let i = 1; i <= 35; i++) {
+            document.write("=");
+        }
+        document.write("<br><b>STRUK MINIMARKET RPL</b><br>");
+        document.write("Kasir   : " + kasir + "<br>");
+        document.write("Pembeli : " + pembeli + "<br>");
+
+        for (let i = 1; i <= 35; i++) {
+            document.write("-");
+        }
+        document.write("<br>");
+
+        document.write("Total Belanja : Rp " + totalBelanja + "<br>");
+        document.write("Diskon (" + persenDiskon + "%) : Rp " + nominalDiskon + "<br>");
+        document.write("<b>Total Bayar : Rp " + totalBayar + "</b><br>");
+
+        for (let i = 1; i <= 35; i++) {
+            document.write("=");
+        }
+        document.write("<br>");
+
+        // Bonus Kupon Undian
+        if (totalBayar >= 100000) {
+            document.write("<b>Selamat! Anda Mendapatkan Kupon Undian!</b>");
+        }
+    </script>
+</body>
+</html>
